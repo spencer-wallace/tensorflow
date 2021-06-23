@@ -53,7 +53,10 @@ RUN apt-get update && apt-get install -y --no-install-recommends \
         libzmq3-dev \
         pkg-config \
         software-properties-common \
-        unzip
+        unzip \
+        vim \
+        pip \
+        git
 
 # Install TensorRT if not building for PowerPC
 # NOTE: libnvinfer uses cuda11.1 versions
@@ -76,7 +79,7 @@ RUN ln -s /usr/local/cuda/lib64/stubs/libcuda.so /usr/local/cuda/lib64/stubs/lib
 ENV LANG C.UTF-8
 
 RUN apt-get update && apt-get install -y \
-    python3 \
+    python3.8 \
     python3-pip
 
 RUN python3 -m pip --no-cache-dir install --upgrade \
@@ -99,3 +102,6 @@ RUN python3 -m pip install --no-cache-dir ${TF_PACKAGE}${TF_PACKAGE_VERSION:+==$
 
 COPY bashrc /etc/bash.bashrc
 RUN chmod a+rwx /etc/bash.bashrc
+
+RUN git clone https://spencer-wallace:kapwoj-gafwuj-5bEnjy@github.com/spencer-wallace/property_project
+RUN apt-get install python3-venv
