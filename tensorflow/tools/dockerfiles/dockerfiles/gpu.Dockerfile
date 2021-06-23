@@ -104,5 +104,5 @@ COPY bashrc /etc/bash.bashrc
 RUN chmod a+rwx /etc/bash.bashrc
 
 RUN cd /home/ \
-    git clone https://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@github.com/spencer-wallace/property_project.git
+    git clone -b docker https://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:x-oauth-basic@github.com/spencer-wallace/property_project.git
 
