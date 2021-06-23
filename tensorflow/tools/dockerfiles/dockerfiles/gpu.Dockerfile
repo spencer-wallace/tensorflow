@@ -103,5 +103,5 @@ RUN python3 -m pip install --no-cache-dir ${TF_PACKAGE}${TF_PACKAGE_VERSION:+==$
 COPY bashrc /etc/bash.bashrc
 RUN chmod a+rwx /etc/bash.bashrc
 
-RUN git clone https://spencer-wallace:kapwoj-gafwuj-5bEnjy@github.com/spencer-wallace/property_project
+RUN git clone https://github.com/spencer-wallace/property_project
 RUN apt-get install python3-venv
